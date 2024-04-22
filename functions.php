@@ -13,3 +13,12 @@ function guest()
         die();
     }
 }
+function admin()
+{
+    if ($_SESSION["role"] != "admin") {
+        header("Location: /books");
+        die();
+    }
+}
+
+

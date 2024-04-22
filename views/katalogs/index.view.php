@@ -8,15 +8,17 @@
       <?php foreach ($posts as $post) {
         if ($post["available"] == 1) { ?>
           <li>
-            <?php if (isset($_SESSION["user"]) && $_SESSION["role"] != "admin") { ?>
-              <?= $post["nosaukums"] . " / " . $post["autors"] . " / " . $post["izdosana"] ?>
-              <form method="POST" action="/borrow">
-                <button name="id" value="<?= $post['id'] ?>">Borrow</button>
-              </form>
-            <?php } else { ?>
+            <?php if ($_SESSION["role"] == "admin") { ?>
               <a href="/show?id=<?= $post['id'] ?>">
                 <?= $post["nosaukums"] . " / " . $post["autors"] . " / " . $post["izdosana"] ?>
               </a>
+            <?php } else { ?>
+              <?= $post["nosaukums"] . " / " . $post["autors"] . " / " . $post["izdosana"] ?>
+            <?php } ?>
+            <?php if (isset($_SESSION["user"])) { ?>
+              <form method="POST" action="/borrow">
+                <button name="id" value="<?= $post['id'] ?>">Borrow</button>
+              </form>
             <?php } ?>
             <?php if ($_SESSION["role"] == "admin") { ?>
               <form method="POST" action="/remove">
@@ -35,15 +37,17 @@
       <?php foreach ($posts as $post) {
         if ($post["available"] == 0) { ?>
           <li>
-            <?php if (isset($_SESSION["user"]) && $_SESSION["role"] != "admin") { ?>
-              <?= $post["nosaukums"] . " / " . $post["autors"] . " / " . $post["izdosana"] ?>
-              <form method="POST" action="/return">
-                <button name="id" value="<?= $post['id'] ?>">Return</button>
-              </form>
-            <?php } else { ?>
+            <?php if ($_SESSION["role"] == "admin") { ?>
               <a href="/show?id=<?= $post['id'] ?>">
                 <?= $post["nosaukums"] . " / " . $post["autors"] . " / " . $post["izdosana"] ?>
               </a>
+            <?php } else { ?>
+              <?= $post["nosaukums"] . " / " . $post["autors"] . " / " . $post["izdosana"] ?>
+            <?php } ?>
+            <?php if (isset($_SESSION["user"])) { ?>
+              <form method="POST" action="/return">
+                <button name="id" value="<?= $post['id'] ?>">Return</button>
+              </form>
             <?php } ?>
             <?php if ($_SESSION["role"] == "admin") { ?>
               <form method="POST" action="/remove">

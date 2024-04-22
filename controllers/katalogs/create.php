@@ -1,12 +1,6 @@
 <?php
-if (!isset($_SESSION["user"])) {
-    header("Location: /login");
-    die();
-}
-if ($_SESSION["role"] != "admin") {
-    header("Location: /books");
-    die();
-}
+auth();
+admin();
 
 require "Validator.php";
 require "Database.php";

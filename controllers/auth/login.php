@@ -1,6 +1,4 @@
 <?php
-
-
 guest();
 
 require "Validator.php";

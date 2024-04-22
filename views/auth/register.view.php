@@ -1,22 +1,26 @@
 <?php require "views/components/head.php" ?>
-<h1>Register</h1>
-
-<form method="POST">
-  <label>
-    email:
-    <input name="email" type="email" />
-  </label>
-  <?php if (isset($errors["email"])) { ?>
-    <p><?= $errors["email"] ?></p>
-  <?php } ?>
-  <label>
-    Password <span class="explanation">(jābūt 8 rakstzīmēm, 1 lielam, 1 mazam un 1 īpaša simbolam un 1 ciparam, good luck)</span>:
-    <input name="password" type="password" />
-  </label>
-  <?php if (isset($errors["password"])) { ?>
-    <p><?= $errors["password"] ?></p>
-  <?php } ?>
-  <button>Register</button>
-</form>
-
+<div class="auth-container">
+  <h1 class="login-h1">Register</h1>
+  <div class="border-container">
+    <form class="auth-form" method="POST">
+      <label>
+        E-mail:
+        <input name="email" type="email" class="auth-input" />
+      </label>
+      <?php if (isset($errors["email"])) { ?>
+        <p><?= $errors["email"] ?></p>
+      <?php } ?>
+      <label>
+        Password:
+        <input name="password" type="password" class="auth-input" />
+        <span class="explanation">(Must be 8 characters, 1 uppercase, 1 lowercase, 1 special symbol and 1 number)</span>
+      </label>
+      <?php if (isset($errors["password"])) { ?>
+        <p><?= $errors["password"] ?></p>
+      <?php } ?>
+      <button>Register</button>
+    </form>
+  </div>
+</div>
 <?php require "views/components/footer.php" ?>
+
