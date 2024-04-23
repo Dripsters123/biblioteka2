@@ -1,0 +1,115 @@
+body {
+  
+  padding: 0;
+  background-color: rgb(237, 222, 206);
+    margin: 0;
+} 
+
+
+nav {
+  background-color: bisque;
+  overflow: hidden;
+  justify-content: space-between;
+  display: flex;
+}
+
+.nav-a {
+  flex: 1;
+  display: block;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+li{
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto; 
+  padding: 0 10%; 
+}
+
+.available-books, .not-available-books {
+  width: 45%;
+  padding: 50px; 
+  text-align: center;
+  margin-top: 35px;
+}
+
+.available-books h1, .not-available-books h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+}
+.available-books ul, .not-available-books ul {
+  list-style-type: none;
+
+}
+.login-h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+.auth-container {
+  width: 300px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+.auth-input {
+  font-size: 20px; 
+}
+
+.auth-form input, .auth-form button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+ 
+}
+.auth-form button {
+  padding: 20px;
+  border-radius: 20px;
+
+}
+
+.auth-link {
+  text-align: center;
+  font-size: 20px;
+
+}
+
+.border-container {
+  border: 2px solid black;
+  padding: 20px;
+  background-color: blanchedalmond;
+  border-radius: 20px;
+  width: 500px;
+  
+}
+.explanation {
+  font-size: 15px; 
+  color: #f60909; 
+  margin-top: 5px; 
+}
+
+
+.auth-link {
+  text-align: center;
+}
+
+

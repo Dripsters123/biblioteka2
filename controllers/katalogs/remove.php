@@ -2,8 +2,8 @@
 auth();
 admin();
 
-require "Database.php";
-$config = require("config.php");
+require "../core/Database.php";
+$config = require("../config.php");
 $db = new Database($config);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,6 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ];
     $db->execute($query, $params);
 
-    header("Location: /");
+    header("Location: /books");
     die();
 };

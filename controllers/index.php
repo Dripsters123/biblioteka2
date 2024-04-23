@@ -2,4 +2,5 @@
 
 auth();
 
-require "views/index.view.php";
+$title = "Logout";
+require "../views/index.view.php";

@@ -2,8 +2,8 @@
 auth();
 admin();
 
-require "Validator.php";
-require "Database.php";
+require "../core/Validator.php";
+require "../core/Database.php";
 $config = require("config.php");
 $db = new Database($config);
 
@@ -40,4 +40,4 @@ $post = $db->execute($query, $params)->fetch();
 
 $title = "Edit";
 
-require "views/katalogs/edit.view.php";
+require "../views/katalogs/edit.view.php";

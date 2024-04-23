@@ -1,4 +1,4 @@
-<?php require "views/components/head.php" ?>
+<?php require "../views/components/head.php" ?>
 <div class="auth-container">
   <div class="header-bar">
     <h1 class="login-h1">Login</h1>
@@ -31,4 +31,4 @@
   <?php } ?>
 </div>
 
-<?php require "views/components/footer.php" ?>
+<?php require "../views/components/footer.php" ?>

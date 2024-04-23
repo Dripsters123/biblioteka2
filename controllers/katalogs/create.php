@@ -2,9 +2,9 @@
 auth();
 admin();
 
-require "Validator.php";
-require "Database.php";
-$config = require("config.php");
+require "../core/Validator.php";
+require "../core/Database.php";
+$config = require("../config.php");
 $db = new Database($config);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
@@ -37,4 +37,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 $title = "Create";
-require "views/katalogs/create.view.php";
+require "../views/katalogs/create.view.php";

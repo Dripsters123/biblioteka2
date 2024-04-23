@@ -1,7 +1,6 @@
-
+<?php require "../views/components/head.php" ?>
+    <?php require "../views/components/navbar.php" ?>
 <form method="POST">
-    <?php require "views/components/head.php" ?>
-    <?php require "views/components/navbar.php" ?>
     <h1>Pievieno jaunu grāmatu</h1>
 
     <label>Nosaukums:
@@ -32,4 +31,4 @@
 
     <button>Pievienot</button>
 </form>
-<?php require "views/components/footer.php" ?>
+<?php require "../views/components/footer.php" ?>

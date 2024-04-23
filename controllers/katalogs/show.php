@@ -2,8 +2,8 @@
 auth();
 admin();
 
-require "Database.php";
-$config = require("config.php");
+require "../core/Database.php";
+$config = require("../config.php");
 
 $db = new Database($config);
 
@@ -14,4 +14,4 @@ $post = $db->execute($query, $params)->fetch();
 
 $title = "Katalogs";
 
-require "views/katalogs/show.view.php";
+require "../views/katalogs/show.view.php";

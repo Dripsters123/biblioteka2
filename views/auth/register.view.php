@@ -1,4 +1,4 @@
-<?php require "views/components/head.php" ?>
+<?php require "../views/components/head.php" ?>
 <div class="auth-container">
   <h1 class="login-h1">Register</h1>
   <div class="border-container">
@@ -22,5 +22,5 @@
     </form>
   </div>
 </div>
-<?php require "views/components/footer.php" ?>
+<?php require "../views/components/footer.php" ?>
 
