@@ -2,29 +2,33 @@
 <?php require "../views/components/navbar.php" ?>
 
 <div class="container">
-  <ul>
-    <?php foreach ($books as $book) { ?>
-      <li>
-        <h2><?= $book["nosaukums"] ?></h2>
-        <p>Author: <?= $book["autors"] ?></p>
-        <p>Release date: <?= $book["izdosana"] ?></p>
-        <p>Availability: <?= $book["available"] > 0 ? 'Available - ' . $book["available"] . ' copies' : 'Not Available' ?></p>
+  <div class="book-list">
+    <?php foreach ($posts as $post) { ?>
+      <div class="book-item book-center">
+        <h2><?= $post["nosaukums"] ?></h2>
+        <p>Author: <?= $post["autors"] ?></p>
+        <p>Release date: <?= $post["izdosana"] ?></p>
+        <p>Availability: <?= $post["available"] == 1 ? 'Available' : 'Not Available' ?></p>
         <?php if ($_SESSION["role"] == "admin") { ?>
-          <a href="/show?id=<?= $book['id'] ?>">Details</a>
+          <div class="details">
+            <a href="/show?id=<?= $post['id'] ?>">Details</a>
+          </div>
+          <div class="button-group">
+            <form method="POST" action="/remove" class="button-form">
+              <button name="id" value="<?= $post['id'] ?>">Delete</button>
+            </form>
         <?php } ?>
         <?php if (isset($_SESSION["user"])) { ?>
-          <form method="POST" action="<?= $book["available"] > 0 ? '/borrow' : '/return' ?>">
-            <button name="id" value="<?= $book['id'] ?>"><?= $book["available"] > 0 ? 'Borrow' : 'Return' ?></button>
-          </form>
+            <form method="POST" action="<?= $post["available"] == 1 ? '/borrow' : '/return' ?>" class="button-form">
+              <button name="id" value="<?= $post['id'] ?>"><?= $post["available"] == 1 ? 'Borrow' : 'Return' ?></button>
+            </form>
+          </div>
         <?php } ?>
-        <?php if ($_SESSION["role"] == "admin") { ?>
-          <form method="POST" action="/remove">
-            <button name="id" value="<?= $book['id'] ?>">Delete</button>
-          </form>
-        <?php } ?>
-      </li>
+      </div>
     <?php } ?>
-  </ul>
+  </div>
 </div>
 
 <?php require "../views/components/footer.php" ?>
+
+

@@ -1,11 +1,11 @@
-<?php require "../views/components/head.php" ?>
-<h1 class="login-h1">Are you sure you want to logout?</h1>
 
-<div>
-    <form class="auth-link" action="/logout" method="POST">
-        <button class="btn-lout">Logout</button>
+<h1 style="font-size:60px; text-align:center;">Are you sure you want to logout?</h1>
+
+<div style="text-align: center;">
+    <form style="display: inline-block; margin: 0 10px;" action="/logout" method="POST">
+        <button style="font-size: 60px; padding: 10px;">Logout</button>
     </form>
 
-    <a class="a-lout" href="/books" >Return</a>
+    <a href="/books" style="font-size: 60px; padding: 10px; display: inline-block; margin: 0 10px;">Return</a>
 </div>
-<?php require "../views/components/footer.php" ?>
+</body>
