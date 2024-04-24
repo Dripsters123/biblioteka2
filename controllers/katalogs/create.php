@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors["nosaukums"] = "Nosaukums cannot be empty or too long";
     }
     if (!Validator::string($_POST["autors"], min: 1, max: 255)) {
-        $errors["autors"] = "Nosaukums cannot be empty or too long";
+        $errors["autors"] = "Author cannot be empty or too long";
     }
 
     if (empty($errors)) {

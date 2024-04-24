@@ -4,7 +4,7 @@ admin();
 
 require "../core/Validator.php";
 require "../core/Database.php";
-$config = require("config.php");
+$config = require("../config.php");
 $db = new Database($config);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -11,7 +11,7 @@
         <p>Availability: <?= $post["available"] == 1 ? 'Available' : 'Not Available' ?></p>
         <?php if ($_SESSION["role"] == "admin") { ?>
           <div class="details">
-            <a href="/show?id=<?= $post['id'] ?>">Details</a>
+            <a href="/show?id=<?= $post['id'] ?>">Edit</a>
           </div>
           <div class="button-group">
             <form method="POST" action="/remove" class="button-form">
@@ -30,5 +30,3 @@
 </div>
 
 <?php require "../views/components/footer.php" ?>
-
-

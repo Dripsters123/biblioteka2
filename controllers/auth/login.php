@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $errors = [];
 
   if (!Validator::email($_POST["email"])) {
-    $errors["email"] = "Nepareiz epasta formāts";
+    $errors["email"] = "Wrong email format";
   }
+  
 
   $query = "SELECT * FROM users WHERE email = :email";
   $params = [

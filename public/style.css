@@ -112,7 +112,6 @@ li {
 }
 
 .book-item {
-  width: calc(100% / 5 - 40px);
   padding: 20px;
   margin: 20px;
   border: 1px solid;
@@ -126,6 +125,7 @@ li {
 button {
   width: 110px;
   font-size: 15px;
+  border-radius: 5px;
 }
 
 .button-group {
@@ -140,3 +140,83 @@ button {
 .details {
   text-align: center;
 }
+.book-form-container {
+  width: 500px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book-form-input {
+  font-size: 20px;
+}
+
+.book-form input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+}
+
+.book-form label {
+  font-size: 25px;
+}
+
+.book-form input,
+.book-form button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.book-form button {
+  padding: 20px;
+  border-radius: 20px;
+  transition-duration: 0.4s; 
+}
+
+.book-form button:hover {
+  background-color: rgb(246, 138, 138);
+  color: white;
+}
+.logout-container {
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.logout-h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+.logout-style {
+  display: flex;
+  justify-content: space-between;
+  font-size: 70px;
+}
+
+.logout-form {
+  display: flex;
+  margin-right: 20px;
+  
+}
+.logout-link{
+  text-decoration: none;
+  
+}
+
+
+
+
+
+
