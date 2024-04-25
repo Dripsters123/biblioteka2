@@ -21,8 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   ];
   $user = $db->execute($query, $params)->fetch();
   if (!$user || !password_verify($_POST["password"], $user["password"])) {
-    $errors["email"] = "Kaut kas nav labi";
-  }
+    $errors["password"] = "Wrong password";
+}
+
 
   if (empty($errors)) {
     $_SESSION["user"] = true;

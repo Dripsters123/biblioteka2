@@ -9,6 +9,7 @@ nav {
   overflow: hidden;
   justify-content: space-between;
   display: flex;
+  box-shadow: 10px 10px 5px rgb(197, 197, 197);
 }
 
 .nav-a {
@@ -19,6 +20,7 @@ nav {
   padding: 14px 16px;
   font-size: 40px;
   text-decoration: none;
+  border: 1px solid black;
 }
 
 li {
@@ -31,24 +33,6 @@ li {
   padding: 0 10%;
 }
 
-.available-books,
-.not-available-books {
-  width: 45%;
-  padding: 50px;
-  text-align: center;
-  margin-top: 35px;
-}
-
-.available-books h1,
-.not-available-books h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 35px;
-}
-.available-books ul,
-.not-available-books ul {
-  list-style-type: none;
-}
 .login-h1 {
   text-align: center;
   font-size: 60px;
@@ -107,8 +91,10 @@ li {
 }
 .book-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 5%;
 }
 
 .book-item {
@@ -118,6 +104,7 @@ li {
   border-radius: 10px;
   font-size: 20px;
   background-color: #cbc3e3;
+  max-width: 300px;
 }
 .book-center {
   text-align: center;
@@ -179,7 +166,7 @@ button {
 .book-form button {
   padding: 20px;
   border-radius: 20px;
-  transition-duration: 0.4s; 
+  transition-duration: 0.4s;
 }
 
 .book-form button:hover {
@@ -208,15 +195,49 @@ button {
 .logout-form {
   display: flex;
   margin-right: 20px;
-  
 }
-.logout-link{
+.logout-link {
   text-decoration: none;
-  
+}
+.centered {
+  text-align: center;
 }
 
+.edit-link {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 1em;
+}
 
+@media only screen and (max-width: 600px) {
+  .container,
+  .book-list,
+  .book-item {
+    flex-direction: column;
+  }
+  nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .nav-a {
+    font-size: 20px;
+    text-align: center;
+  }
+}
 
-
-
-
+@media only screen and (min-width: 600px) {
+  .container,
+  .book-list,
+  .book-item {
+    flex-direction: row;
+  }
+  nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .nav-a {
+    font-size: 30px;
+    text-align: center;
+  }
+}

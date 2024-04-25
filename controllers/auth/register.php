@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $errors = [];
 
   if (!Validator::email($_POST["email"])) {
-    $errors["email"] = "Nepareizs epasta formāts";
+    $errors["email"] = "Wrong E-mail format";
   }
   if (!Validator::password($_POST["password"])) {
-    $errors["password"] = "Parolē ir nepilnības";
+    $errors["password"] = "Password has not met the requirements";
   }
 
   $query = "SELECT * FROM users WHERE email = :email";
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $result = $db->execute($query, $params)->fetch();
 
   if ($result) {
-    $errors["email"] = "Konts jau pastāv";
+    $errors["email"] = "The account already exists";
   }
 
   if (empty($errors)) {
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ];
     $db->execute($query, $params);
 
-    $_SESSION["flash"] = "Tu esi veiksmīgi reģistrējies";
+    $_SESSION["flash"] = "You have succesfully logged in";
     header("Location: /login");
     die();
   }

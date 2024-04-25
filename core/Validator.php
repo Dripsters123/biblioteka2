@@ -34,4 +34,11 @@ class Validator
                 $data
             );
     }
+     public static function date($data)
+    {
+        $format = 'Y-m-d'; 
+        $d = DateTime::createFromFormat($format, $data);
+        return $d && $d->format($format) === $data;
+    }
+
 }

@@ -15,6 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!Validator::string($_POST["autors"], min: 1, max: 255)) {
         $errors["autors"] = "Author cannot be empty or too long";
     }
+    if (!Validator::date($_POST["izdosana"])) {
+    $errors["izdosana"] = "Invalid date";
+}
 
     if (empty($errors)) {
         $query = "INSERT INTO katalogs (nosaukums,autors,izdosana,available)

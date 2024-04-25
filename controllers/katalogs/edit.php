@@ -11,8 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     if (!Validator::string($_POST["nosaukums"], min: 1, max: 255)) {
-        $errors["nosaukums"] = "Title cannot be empty or too long";
+        $errors["nosaukums"] = "Name cannot be empty or too long";
     }
+    
+    if (!Validator::string($_POST["autors"], min: 1, max: 255)) {
+        $errors["autors"] = "Author cannot be empty or too long";
+    }
+      if (!Validator::date($_POST["izdosana"])) {
+    $errors["izdosana"] = "Invalid date";
+}
 
     $available = isset($_POST["available"]) ? 1 : 0;
 
